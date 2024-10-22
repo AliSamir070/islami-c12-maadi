@@ -15,7 +15,6 @@ class _SebhaTabState extends State<SebhaTab> {
     List<String> ad3ia = ["الحمدلله","سبحان الله","الله اكبر","لا اله الا الله"];
   @override
   Widget build(BuildContext context) {
-    double rotation = -3.1415926535897932;
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Center(
