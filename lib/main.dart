@@ -19,12 +19,12 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.transparent,
-        dividerTheme: DividerThemeData(
+        dividerTheme: const DividerThemeData(
 
           color: Color(0xffB7935F),
           thickness: 3,
         ),
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: Color(0xffB7935F),
           unselectedIconTheme: IconThemeData(
             color: Colors.white,
@@ -39,12 +39,12 @@ class MyApp extends StatelessWidget {
         ),
         colorScheme: ColorScheme.fromSeed(
             seedColor: Colors.deepPurple,
-            primary: Color(0xffB7935F),
-          secondary: Color(0xffB7935F).withOpacity(0.57),
+            primary: const Color(0xffB7935F),
+          secondary: const Color(0xffB7935F).withOpacity(0.57),
           onPrimary: Colors.white,
           onSecondary: Colors.black
         ),
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent,
           centerTitle: true,
           titleTextStyle: TextStyle(
@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
           )
         ),
         cardTheme: CardTheme(
-          margin: EdgeInsets.all(16),
+          margin: const EdgeInsets.all(16),
           color: Colors.white.withOpacity(0.8),
           surfaceTintColor:Colors.white.withOpacity(0.8) ,
           elevation: 30
@@ -63,9 +63,9 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: HomeScreen.routeName,
       routes: {
-        HomeScreen.routeName:(_)=>HomeScreen(),
-        QuranDetailsScreen.routeName :(_)=> QuranDetailsScreen(),
-        AhadethDetailsScreen.routeName:(_)=>AhadethDetailsScreen()
+        HomeScreen.routeName:(_)=>const HomeScreen(),
+        QuranDetailsScreen.routeName :(_)=> const QuranDetailsScreen(),
+        AhadethDetailsScreen.routeName:(_)=>const AhadethDetailsScreen()
       },
     );
   }

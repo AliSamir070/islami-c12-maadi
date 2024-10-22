@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_c12_maadi/home/tabs/Hadeth.dart';
 
@@ -10,7 +9,7 @@ class AhadethDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Hadeth args = ModalRoute.of(context)!.settings.arguments as Hadeth;
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           image: DecorationImage(image: AssetImage("assets/images/background.png"),fit: BoxFit.fill)
       ),
       child: Scaffold(
@@ -20,7 +19,7 @@ class AhadethDetailsScreen extends StatelessWidget {
           Expanded(
             child: Card(
               child: SingleChildScrollView(
-                child: Text(args.content,style: TextStyle(
+                child: Text(args.content,style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w400
                 ),),
