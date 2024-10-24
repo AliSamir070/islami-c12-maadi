@@ -3,7 +3,7 @@ import 'package:islami_c12_maadi/home/tabs/AhadethTab.dart';
 import 'package:islami_c12_maadi/home/tabs/QuranTab.dart';
 import 'package:islami_c12_maadi/home/tabs/RadioTab.dart';
 import 'package:islami_c12_maadi/home/tabs/SebhaTab.dart';
-// this is home
+
 class HomeScreen extends StatefulWidget {
   static const String routeName = "Home";
 
@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> tabs = [
     QuranTab(),
     AhadethTab(),
-    SebhaTab(),
+    TasbeehScreen(),
     RadioTab()
   ];
   @override
