@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:islami_c12_maadi/home/tabs/QuranSuraWidget.dart';
+import 'package:islami_c12_maadi/home/tabs/quran_sura_widget.dart';
 
 class QuranTab extends StatelessWidget {
   List<String> suraNames = [
@@ -23,16 +21,15 @@ class QuranTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Column(
       children: [
-        Expanded(child: Image.asset("assets/images/quran_header.png")),
-        Divider(
+        Expanded(child: Image.asset("assets/images/qur2an_screen_logo.png")),
+        const Divider(
           height: 0,
         ),
         Row(
           children: [
-            Expanded(child: Text("Sura Name",
+            const Expanded(child: Text("Sura Name",
               style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.w600
@@ -43,13 +40,13 @@ class QuranTab extends StatelessWidget {
               height: 0.08*height,
               width: 3,
             ),
-            Expanded(child: Text("Verses Number",textAlign: TextAlign.center,style: TextStyle(
+            const Expanded(child: Text("Verses Number",textAlign: TextAlign.center,style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.w600
             )))
           ],
         ),
-        Divider(
+        const Divider(
           height: 0,
         ),
         Expanded(
@@ -60,7 +57,7 @@ class QuranTab extends StatelessWidget {
                 name: suraNames[index],
                 number: versesNumber[index],
               ),
-              separatorBuilder: (context, index) => Divider(
+              separatorBuilder: (context, index) => const Divider(
                 height: 0,
               ),
               itemCount: suraNames.length),

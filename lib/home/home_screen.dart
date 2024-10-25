@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:islami_c12_maadi/home/tabs/AhadethTab.dart';
-import 'package:islami_c12_maadi/home/tabs/QuranTab.dart';
-import 'package:islami_c12_maadi/home/tabs/RadioTab.dart';
-import 'package:islami_c12_maadi/home/tabs/SebhaTab.dart';
+import 'package:islami_c12_maadi/home/tabs/ahadeth_tab.dart';
+import 'package:islami_c12_maadi/home/tabs/quran_tab.dart';
+import 'package:islami_c12_maadi/home/tabs/radio_tab.dart';
+import 'package:islami_c12_maadi/home/tabs/sebha_tab.dart';
+
 // this is home
 class HomeScreen extends StatefulWidget {
   static const String routeName = "Home";
+
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -13,55 +16,53 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
-  List<Widget> tabs = [
-    QuranTab(),
-    AhadethTab(),
-    SebhaTab(),
-    RadioTab()
-  ];
+  List<Widget> tabs = [QuranTab(), AhadethTab(), SebhaTab(), RadioTab()];
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage("assets/images/background.png"),fit: BoxFit.fill)
-      ),
+      decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage(
+                "assets/images/default_bg.png",
+              ),
+              fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Islami"),
+          title: const Text("Islami"),
         ),
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: currentIndex,
-            onTap: (index){
+            onTap: (index) {
               setState(() {
                 currentIndex = index;
               });
             },
-            items:[
+            items: [
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).colorScheme.primary,
                   icon: const ImageIcon(
-                AssetImage("assets/images/moshaf_blue.png")
-              ),label: "Quran"),
+                      AssetImage("assets/images/icon_quran.png")),
+                  label: "Quran"),
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).colorScheme.primary,
-
-                  icon: ImageIcon(
-                  AssetImage("assets/images/ahadeth_icon.png")
-              ),label: "Ahadeth"),
+                  icon: const ImageIcon(
+                    AssetImage("assets/images/icon_hadeth.png"),
+                  ),
+                  label: "Ahadeth"),
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).colorScheme.primary,
-
-                  icon: ImageIcon(
-                  AssetImage("assets/images/sebha_icon.png")
-              ),label: "Tasbeeh"),
+                  icon: const ImageIcon(
+                    AssetImage("assets/images/icon_sebha.png"),
+                  ),
+                  label: "Tasbeeh"),
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).colorScheme.primary,
-
-                  icon: ImageIcon(
-                  AssetImage("assets/images/radio_icon.png")
-              ),label: "Radio")
-            ]
-        ),
+                  icon: const ImageIcon(
+                    AssetImage("assets/images/icon_radio.png"),
+                  ),
+                  label: "Radio")
+            ]),
         body: tabs[currentIndex],
       ),
     );
