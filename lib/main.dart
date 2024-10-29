@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c12_maadi/ahadeth_details/ahadeth_details_screen.dart';
 import 'package:islami_c12_maadi/quran_details/quran_details_screen.dart';
-
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'home/home_screen.dart';
+import 'provider/settingsProvider.dart';
 
-void main() {
+void main()async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  String storedTheme = prefs.getString('theme') ?? 'light';
+  String storedLanguage = prefs.getString('language') ?? 'en';
   // hello world
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider<SettingsProvider>(
+      create: (context) => SettingsProvider(),
+      child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -15,8 +22,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
     return MaterialApp(
       title: 'Flutter Demo',
+      themeMode: settingsProvider.themeMode,
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.transparent,
         dividerTheme: DividerThemeData(
@@ -61,6 +71,11 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
+      supportedLocales: [
+        Locale("en"),
+        Locale("ar")
+      ],
+      locale: Locale(settingsProvider.language),
       initialRoute: HomeScreen.routeName,
       routes: {
         HomeScreen.routeName:(_)=>HomeScreen(),
