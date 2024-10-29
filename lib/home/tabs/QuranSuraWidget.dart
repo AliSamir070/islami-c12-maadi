@@ -23,18 +23,18 @@ class QuranSuraWidget extends StatelessWidget {
       child: Row(
         children: [
           Expanded(child: Text(name,
-            style: TextStyle(
-                fontSize: 25,
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+              fontWeight: FontWeight.w400
             ),
             textAlign: TextAlign.center,)),
           Container(
-            color: Theme.of(context).colorScheme.primary,
+            color: Theme.of(context).colorScheme.tertiary,
             height: 0.08*height,
             width: 3,
           ),
-          Expanded(child: Text(number.toString(),textAlign: TextAlign.center,style: TextStyle(
-              fontSize: 25,
-          )))
+          Expanded(child: Text(number.toString(),textAlign: TextAlign.center, style: Theme.of(context).textTheme.titleMedium?.copyWith(
+              fontWeight: FontWeight.w400
+          ),))
         ],
       ),
     );

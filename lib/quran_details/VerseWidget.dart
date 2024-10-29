@@ -10,9 +10,6 @@ class VerseWidget extends StatelessWidget {
     return Text("$verse ($verseNumber)",
       textAlign: TextAlign.center,
       textDirection: TextDirection.rtl,
-      style:TextStyle(
-      fontSize: 20,
-      fontWeight: FontWeight.w400
-    ),);
+      style:Theme.of(context).textTheme.bodyMedium,);
   }
 }

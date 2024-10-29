@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_c12_maadi/quran_details/VerseWidget.dart';
 
+import '../style/AppStyle.dart';
+
 class QuranDetailsScreen extends StatefulWidget {
   static const String routeName = "qurandetails";
 
@@ -17,7 +19,9 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
     loadFile(args.index);
     return Container(
       decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/images/background.png"),fit: BoxFit.fill)
+          image: DecorationImage(image: AssetImage(AppStyle.isDark
+              ?"assets/images/home_dark_background.png"
+              : "assets/images/background.png"),fit: BoxFit.fill)
       ),
       child: Scaffold(
         appBar: AppBar(
