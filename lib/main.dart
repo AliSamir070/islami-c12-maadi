@@ -8,11 +8,15 @@ import 'package:provider/provider.dart';
 import 'ahadeth_details/ahadeth_details_screen.dart';
 import 'home/home_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 void main() {
   // hello world
-  runApp(ChangeNotifierProvider(
-      create: (context)=>SettingsProvider(),
-      child: const MyApp()));
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => SettingsProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -22,10 +26,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
-   return MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
       theme: AppStyle.lightTheme,
-      darkTheme:AppStyle.darkTheme ,
+      darkTheme: AppStyle.darkTheme,
       themeMode: settingsProvider.themeMode,
       initialRoute: HomeScreen.routeName,
       localizationsDelegates: [
@@ -40,9 +44,9 @@ class MyApp extends StatelessWidget {
       ],
       locale: Locale(settingsProvider.language),
       routes: {
-        HomeScreen.routeName:(_)=>HomeScreen(),
-        QuranDetailsScreen.routeName :(_)=> QuranDetailsScreen(),
-        AhadethDetailsScreen.routeName:(_)=>AhadethDetailsScreen()
+        HomeScreen.routeName: (_) => HomeScreen(),
+        QuranDetailsScreen.routeName: (_) => QuranDetailsScreen(),
+        AhadethDetailsScreen.routeName: (_) => AhadethDetailsScreen()
       },
     );
   }
