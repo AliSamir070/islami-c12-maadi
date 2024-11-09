@@ -6,6 +6,8 @@ import 'package:islami_c12_maadi/quran_details/VerseWidget.dart';
 class QuranDetailsScreen extends StatefulWidget {
   static const String routeName = "qurandetails";
 
+  const QuranDetailsScreen({super.key});
+
   @override
   State<QuranDetailsScreen> createState() => _QuranDetailsScreenState();
 }
@@ -16,7 +18,7 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
     QuranDetailsArgs args = ModalRoute.of(context)?.settings.arguments as QuranDetailsArgs;
     loadFile(args.index);
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           image: DecorationImage(image: AssetImage("assets/images/background.png"),fit: BoxFit.fill)
       ),
       child: Scaffold(
@@ -25,7 +27,7 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
         ),
       body: Card(
         child: lines.isEmpty
-            ?Center(child: CircularProgressIndicator(),)
+            ?const Center(child: CircularProgressIndicator(),)
             :Column(
               children: [
                 Expanded(
@@ -34,7 +36,7 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
                     verse: lines[index],
                     verseNumber: index+1,
                   ) ,
-                  separatorBuilder: (context, index) => Divider(),
+                  separatorBuilder: (context, index) => const Divider(),
                   itemCount: lines.length),
                 ),
               ],

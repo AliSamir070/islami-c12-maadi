@@ -20,6 +20,8 @@ class QuranTab extends StatelessWidget {
     69,60,34,30,73,54,45,83,182,88,75,85,54,53,89,59,37,35,38,29,18,45,60,49,62,55,78,96,29,22,24,13,14,11,11,18,12,12,30,52,52,
     44,28,28,20,56,40,31,50,40,46,42,29,19,36,25,22,17,19,26,30,20,15,21,11,8,5,19,5,8,8,11,11,8,3,9,5,4,6,3,6,3,5,4,5,6
   ];
+
+  QuranTab({super.key});
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -27,12 +29,12 @@ class QuranTab extends StatelessWidget {
     return Column(
       children: [
         Expanded(child: Image.asset("assets/images/quran_header.png")),
-        Divider(
+        const Divider(
           height: 0,
         ),
         Row(
           children: [
-            Expanded(child: Text("Sura Name",
+            const Expanded(child: Text("Sura Name",
               style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.w600
@@ -43,13 +45,13 @@ class QuranTab extends StatelessWidget {
               height: 0.08*height,
               width: 3,
             ),
-            Expanded(child: Text("Verses Number",textAlign: TextAlign.center,style: TextStyle(
+            const Expanded(child: Text("Verses Number",textAlign: TextAlign.center,style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.w600
             )))
           ],
         ),
-        Divider(
+        const Divider(
           height: 0,
         ),
         Expanded(
@@ -60,7 +62,7 @@ class QuranTab extends StatelessWidget {
                 name: suraNames[index],
                 number: versesNumber[index],
               ),
-              separatorBuilder: (context, index) => Divider(
+              separatorBuilder: (context, index) => const Divider(
                 height: 0,
               ),
               itemCount: suraNames.length),

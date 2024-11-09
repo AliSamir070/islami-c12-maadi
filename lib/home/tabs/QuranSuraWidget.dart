@@ -5,7 +5,7 @@ class QuranSuraWidget extends StatelessWidget {
   String name;
   int number;
   int index;
-  QuranSuraWidget({required this.name,required this.number,required this.index});
+  QuranSuraWidget({super.key, required this.name,required this.number,required this.index});
 // unversioned (untracked) - ignored - tracked
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class QuranSuraWidget extends StatelessWidget {
       child: Row(
         children: [
           Expanded(child: Text(name,
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 25,
             ),
             textAlign: TextAlign.center,)),
@@ -32,7 +32,7 @@ class QuranSuraWidget extends StatelessWidget {
             height: 0.08*height,
             width: 3,
           ),
-          Expanded(child: Text(number.toString(),textAlign: TextAlign.center,style: TextStyle(
+          Expanded(child: Text(number.toString(),textAlign: TextAlign.center,style: const TextStyle(
               fontSize: 25,
           )))
         ],
