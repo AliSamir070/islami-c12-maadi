@@ -9,6 +9,7 @@ class AppStyle{
       backgroundColor: Colors.white
     ),
     textTheme: TextTheme(
+
       titleMedium: TextStyle(
         fontWeight: FontWeight.w600,
         fontSize: 25,
@@ -20,10 +21,17 @@ class AppStyle{
         color: Colors.black
       ),
       bodySmall: TextStyle(
+
           fontSize: 25,
+
           fontWeight: FontWeight.bold,
           color: lightPrimaryColor
-      )
+      ),
+        titleLarge: TextStyle(
+        fontWeight: FontWeight.w400,
+        fontSize: 25,
+        color: Colors.white
+    ),
     ),
     scaffoldBackgroundColor: Colors.transparent,
     dividerTheme: DividerThemeData(
@@ -81,6 +89,11 @@ class AppStyle{
             fontSize: 25,
             fontWeight: FontWeight.bold,
             color: darkSecondary
+        ),
+        titleLarge: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: 25,
+            color: Colors.black
         ),
       titleMedium: TextStyle(
         fontSize: 25,

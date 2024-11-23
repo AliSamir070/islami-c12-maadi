@@ -8,6 +8,8 @@ import 'package:provider/provider.dart';
 import 'ahadeth_details/ahadeth_details_screen.dart';
 import 'home/home_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import 'home/tabs/SebhaTab.dart';
 void main() {
   // hello world
   runApp(ChangeNotifierProvider(
@@ -42,7 +44,8 @@ class MyApp extends StatelessWidget {
       routes: {
         HomeScreen.routeName:(_)=>HomeScreen(),
         QuranDetailsScreen.routeName :(_)=> QuranDetailsScreen(),
-        AhadethDetailsScreen.routeName:(_)=>AhadethDetailsScreen()
+        AhadethDetailsScreen.routeName:(_)=>AhadethDetailsScreen(),
+
       },
     );
   }
