@@ -14,11 +14,15 @@ class AppStyle{
         fontSize: 25,
         color: Colors.black
       ),
+        titleLarge: TextStyle(
+          fontSize: 25 , fontWeight: FontWeight.bold , color: Colors.white,
+        ),
       bodyMedium: TextStyle(
         fontWeight: FontWeight.w400,
         fontSize: 20,
         color: Colors.black
       ),
+
       bodySmall: TextStyle(
           fontSize: 25,
           fontWeight: FontWeight.bold,
@@ -78,10 +82,15 @@ class AppStyle{
     ),
     textTheme: TextTheme(
         bodySmall: TextStyle(
+
             fontSize: 25,
             fontWeight: FontWeight.bold,
             color: darkSecondary
+
         ),
+      titleLarge: TextStyle(
+        fontSize: 25 , fontWeight: FontWeight.bold , color: Colors.black,
+      ),
       titleMedium: TextStyle(
         fontSize: 25,
         fontWeight: FontWeight.w600,
